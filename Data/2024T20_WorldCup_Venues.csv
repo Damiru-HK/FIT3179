@@ -1,10 +1,10 @@
-﻿Venue City,Venue Stadium,Latitiude ,Longitude
-Dallas,Grand Prairie Stadium,32.77081345,-96.98605802
-Providence,Providence Stadium,41.84026,-71.395287
-Bridgetown,Kensington Oval,40.89851,-73.768044
-New York,Nassau County International Cricket Stadium,40.73666629,-73.57516497
-North Sound,Sir Vivian Richards Stadium,17.11085718,-61.78590873
-Lauderhill,Central Broward Regional Park Stadium Turf Ground,26.14040031,-80.19863759
-Tarouba,Brian Lara Stadium,10.30844251,-61.43101061
-Kingstown,Arnos Vale Ground,13.15467805,-61.20602633
-Gros Islet,Daren Sammy National Cricket Stadium,14.07069582,-60.93181417
+﻿Venue City,Venue Stadium,Latitiude ,Longitude,Average First Innings,Average Second Innings
+Dallas,Grand Prairie Stadium,32.77081345,-96.98605802,145.8,147.8
+Providence,Providence Stadium,41.84026,-71.395287,144.8,81.7
+Bridgetown,Kensington Oval,40.89851,-73.768044,153.6,138.25
+New York,Nassau County International Cricket Stadium,40.73666629,-73.57516497,107.6,106
+North Sound,Sir Vivian Richards Stadium,17.11085718,-61.78590873,132,113.4
+Lauderhill,Central Broward Regional Park Stadium Turf Ground,26.14040031,-80.19863759,106,111
+Tarouba,Brian Lara Stadium,10.30844251,-61.43101061,83.6,83.4
+Kingstown,Arnos Vale Ground,13.15467805,-61.20602633,128,113
+Gros Islet,Daren Sammy National Cricket Stadium,14.07069582,-60.93181417,191.2,156
