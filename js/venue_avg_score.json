@@ -42,7 +42,7 @@
 
             "encoding": {
                 "longitude": {"field": "Longitude", "type": "quantitative"},
-                "latitude": {"field": "Latitude ", "type": "quantitative"},
+                "latitude": {"field": "Latitiude ", "type": "quantitative"},
 
                 "size": {
                     "field": "Average First Innings",
@@ -63,7 +63,7 @@
                     {"field": "Venue City", "type": "nominal", "title": "City"},
                     {"field": "Average First Innings", "type": "quantitative", "title": "Average 1st Innings"}
                 ]
-                
+
             }
         }
     ]
