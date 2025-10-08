@@ -1,9 +1,9 @@
-﻿Year,Host 
-2007,South Africa
-2010,West Indies
-2012,Sri Lanka
-2014,Bangladesh
-2016,India
-2021,UAE/ Oman
-2022,Australia
-2024,West Indies/ USA
+﻿Year,Host ,Order
+2007,South Africa,1
+2010,West Indies,2
+2012,Sri Lanka,3
+2014,Bangladesh,4
+2016,India,5
+2021,UAE/ Oman,6
+2022,Australia,7
+2024,West Indies/ USA,8
