@@ -1,0 +1,100 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 450,
+    "title": {
+        "text": "Venue Performance: 1st vs 2nd Innings Scores",
+        "fontSize": 18
+    },
+
+    "data": {
+        "url": "https://raw.githubusercontent.com/Damiru-HK/FIT3179/refs/heads/main/Data/2024T20_WorldCup_Venues.csv",
+        "format": {"type": "csv"}
+    },
+
+    "transform": [
+        {
+            "fold": ["Average First Innings", "Average Second Innings"],
+            "as": ["Innings_Type", "Score"]
+        }
+    ],
+
+    "encoding": {
+        "y": {
+            "field": "Venue Stadium",
+            "type": "nominal",
+            "sort": {
+                "op": "max",
+                "field": "Score",
+                "order": "descending"
+            }
+
+        }
+    },
+
+    "layer": [
+        {
+            "mark": {
+                "type": "rule",
+                "strokeWidth": 2,
+                "color": "#d3d3d3"
+            },
+
+            "encoding": {
+                "x": {
+                    "aggregate": "min",
+                    "field": "Score",
+                    "type": "quantitative",
+                    "scale": {"domain": [40, 220]},
+                    "title": "Average Runs Scored"
+                },
+                "x2": {
+                    "aggregate": "max",
+                    "field": "Score"
+                }
+            }
+        },
+
+        {
+            "mark": {
+                "type": "point",
+                "size": 200,
+                "opacity": 0.9,
+                "stroke": "white",
+                "strokeWidth": 1.5,
+                "filled": true
+            },
+
+            "encoding": {
+                "x": {
+                    "field": "Score",
+                    "type": "quantitative"
+                },
+
+                "color": {
+                    "field": "Venue Stadium",
+                    "type": "nominal",
+                    "scale": {"scheme": "tableau10"},
+                    "legend": {"title": "Venue"}
+                },
+
+                "shape": {
+                    "field": "Innings_Type",
+                    "type": "nominal",
+                    "scale": {"domain": ["Average First Innings", "Average Second Innings"],
+                              "range": ["triangle", "circle"]}
+                },
+
+                "tooltip": [
+                    {"field": "Venue Stadium", "type": "nominal", "title": "Stadium"},
+                    {"field": "Venue City", "type": "nominal", "title": "City"},
+                    {"field": "Innings_Type", "type": "nominal", "title": "Innings Type"},
+                    {"field": "Score", "type": "quantitative", "title": "Average Score", "format": ".1f"}
+                ]
+            }
+        }
+    ],
+    "config": {
+        "view": {"stroke": null}
+    }
+}

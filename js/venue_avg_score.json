@@ -2,7 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 500,
-    "title": "2024 T20 World Cup: Average first inning score by venue",
+    "title": {
+        "text": "2024 T20 World Cup: Average first inning score by venue",
+        "fontSize": 18
+    },
     "projection": {
         "type": "naturalEarth1",
         "center": [-80, 25],
@@ -21,7 +24,7 @@
 
             "mark": {
                 "type": "geoshape",
-                "fill": "#e0e0e0",
+                "fill": "#e8e8e8",
                 "stroke": "white"
             }
         },
@@ -47,21 +50,22 @@
                 "size": {
                     "field": "Average First Innings",
                     "type": "quantitative",
-                    "scale": {"range": [200, 1000]},
+                    "scale": {"range": [300, 2500]},
                     "legend": {"title": "Average First Innings Score"}
                 },
 
                 "color": {
-                    "field": "Average First Innings",
-                    "type": "quantitative",
-                    "scale": {"scheme": "redblue"},
-                    "legend": {"title": "Average First Innings Score"}
+                    "field": "Venue Stadium",
+                    "type": "nominal",
+                    "scale": {"scheme": "tableau10"},
+                    "legend": {"title": "Venue Stadium"}
                 },
 
                 "tooltip": [
                     {"field": "Venue Stadium", "type": "nominal", "title": "Stadium"},
                     {"field": "Venue City", "type": "nominal", "title": "City"},
-                    {"field": "Average First Innings", "type": "quantitative", "title": "Average 1st Innings"}
+                    {"field": "Average First Innings", "type": "quantitative", "title": "Average 1st Innings"},
+                    {"field": "Average Second Innings", "type": "quantitative", "title": "Average 2nd Innings"}
                 ]
 
             }
