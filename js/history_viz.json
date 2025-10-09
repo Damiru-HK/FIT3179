@@ -1,0 +1,145 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "hconcat": [
+        {
+            "title": {
+                "text": "T20 World Cup Hosts (2007-2024",
+                "fontSize": 16
+            },
+            "width": 280,
+            "height": 350,
+            "data": {
+                "url": "https://raw.githubusercontent.com/Damiru-HK/FIT3179/refs/heads/main/Data/Host_countries.csv",
+                "format": {"type": "csv"}
+            },
+
+            "layer": [
+                {
+                    "mark": {
+                        "type": "line",
+                        "color": "#2c7fb8",
+                        "strokeWidth": 2
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 60
+                        },
+                        "y": {
+                            "field": "Order",
+                            "type": "quantitative",
+                            "scale": {"domain": [0.5, 8.5]},
+                            "axis": null
+                        },
+                        "detail": {"field": "Order"}
+                    }
+                },
+
+                {
+                    "mark": {
+                        "type": "point",
+                        "filled": true,
+                        "color": "#2c7fb8",
+                        "size": 150
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 60
+                        },
+                        "y": {
+                            "field": "Order",
+                            "type": "quantitative",
+                            "scale": {"domain": [0.5, 8.5]},
+                            "axis": null
+                        },
+                        "tooltip": [
+                            {"field": "Year", "type": "ordinal", "title": "Year"},
+                            {"field": "Host ", "type": "nominal", "title": "Host Country"}
+                        ]
+                    }
+                },
+
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "dx": 15,
+                        "fontSize": 12,
+                        "color": "#333"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 60
+                        },
+                        "y": {
+                            "field": "Order",
+                            "type": "quantitative"
+                        },
+                        "text": {"field": "Host ", "type": "nominal"}
+                    }
+                },
+
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "dx": -15,
+                        "fontSize": 12,
+                        "color": "#333"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 60
+                        },
+                        "y": {
+                            "field": "Order",
+                            "type": "quantitative"
+                        },
+                        "text": {"field": "Year", "type": "ordinal"}
+                    }
+                }
+
+            ]
+        },
+
+        {
+            "title": {
+                "text": "T20 World Cup Champions",
+                "fontSize": 16
+            },
+            "width": 420,
+            "height": 350,
+            "data": {
+                "url": "https://raw.githubusercontent.com/Damiru-HK/FIT3179/refs/heads/main/Data/T20_world_cup_titles.csv",
+                "format": {"type": "csv"}
+            },
+
+            "mark": {
+                "type": "bar",
+                "tooltip": true,
+                "color": "#2c7fb8"
+            },
+
+            "encoding": {
+                "x": {
+                    "field": "Number of Titles",
+                    "type": "quantitative",
+                    "axis": {"title": "Number of Titles"},
+                    "scale": {"domain": [0, 2.5]}
+                },
+                "y": {
+                    "field": "Country ",
+                    "type": "nominal",
+                    "sort": "-x",
+                    "axis": {"title": "Country"}
+                },
+                "tooltip": [
+                    {"field": "Country ", "type": "nominal", "title": "Country"},
+                    {"field": "Titles", "type": "quantitative", "title": "Number of Titles"}
+                ]
+            }
+        }
+    ],
+    "config": {
+        "view": {"stroke": null}
+    }
+}
