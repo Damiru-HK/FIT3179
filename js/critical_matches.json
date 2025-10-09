@@ -1,0 +1,170 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "T20 World Cup: The Road to Glory",
+        "fontSize": 20,
+        "fontWeight": "bold"
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/Damiru-HK/FIT3179/main/Data/Semi_finalists.csv",
+        "format": {"type": "csv"}
+    },
+
+    "hconcat": [
+        {
+            "title": {
+                "text": ["Semi Final 1", "Brian Lara Stadium, Tarouba"],
+                "fontSize": 14,
+                "fontWeight": "bold"
+            },
+            "width": 250,
+            "height": 300,
+
+            "transform": [
+                {"filter": "datum.Match == 'Semi Final 1'"}
+            ],
+
+            "mark": {
+                "type": "bar",
+                "cornerRadius": 4
+            },
+
+            "encoding": {
+                "y": {
+                    "field": "Team",
+                    "type": "nominal",
+                    "sort": {"field": "Order", "order": "ascending"},
+                    "axis": {
+                        "title": null,
+                        "labelFontSize": 12,
+                        "labelFontWeight": "bold"
+                    }
+                },
+                "x": {
+                    "field": "Score",
+                    "type": "quantitative",
+                    "title": "Runs Scored",
+                    "scale": {"domain": [0, 200]}
+                },
+                "color": {
+                    "field": "Team",
+                    "type": "nominal",
+                    "legend": null,
+                    "scale": {
+                        "domain": ["Afghanistan ", "South Africa", "England", "India"],
+                        "range": ["#1f77b4", "#2ca02c", "#d62728", "#ff7f0e"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "Team", "type": "nominal", "title": "Team"},
+                    {"field": "Runs", "type": "quantitative", "title": "Runs Scored"}
+                ]
+            }
+        },
+
+        {
+            "title": {
+                "text": ["Semi Final 2", "Providence Stadium, Providence"],
+                "fontSize": 14,
+                "fontWeight": "bold"
+            },
+            "width": 250,
+            "height": 300,
+
+            "transform": [
+                {"filter": "datum.Match == 'Semi Final 2'"}
+            ],
+
+            "mark": {
+                "type": "bar",
+                "cornerRadius": 4
+            },
+
+            "encoding": {
+                "y": {
+                    "field": "Team",
+                    "type": "nominal",
+                    "sort": {"field": "Order", "order": "ascending"},
+                    "axis": {
+                        "title": null,
+                        "labelFontSize": 12,
+                        "labelFontWeight": "bold"
+                    }
+                },
+                "x": {
+                    "field": "Score",
+                    "type": "quantitative",
+                    "title": "Runs Scored",
+                    "scale": {"domain": [0, 200]}
+                },
+                "color": {
+                    "field": "Team",
+                    "type": "nominal",
+                    "legend": null,
+                    "scale": {
+                        "domain": ["Afghanistan ", "South Africa", "England", "India"],
+                        "range": ["#1f77b4", "#2ca02c", "#d62728", "#ff7f0e"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "Team", "type": "nominal", "title": "Team"},
+                    {"field": "Runs", "type": "quantitative", "title": "Runs Scored"}
+                ]
+            }
+        },
+
+        {
+            "title": {
+                "text": ["FINAL", "Kengsington Oval, Bridgetown"],
+                "fontSize": 14,
+                "fontWeight": "bold"
+            },
+            "width": 250,
+            "height": 300,
+
+            "transform": [
+                {"filter": "datum.Match == 'Final'"}
+            ],
+
+            "mark": {
+                "type": "bar",
+                "cornerRadius": 4
+            },
+
+            "encoding": {
+                "y": {
+                    "field": "Team",
+                    "type": "nominal",
+                    "sort": {"field": "Order", "order": "ascending"},
+                    "axis": {
+                        "title": null,
+                        "labelFontSize": 12,
+                        "labelFontWeight": "bold"
+                    }
+                },
+                "x": {
+                    "field": "Score",
+                    "type": "quantitative",
+                    "title": "Runs Scored",
+                    "scale": {"domain": [0, 200]}
+                },
+                "color": {
+                    "field": "Team",
+                    "type": "nominal",
+                    "legend": null,
+                    "scale": {
+                        "domain": ["Afghanistan ", "South Africa", "England", "India"],
+                        "range": ["#1f77b4", "#2ca02c", "#d62728", "#ff7f0e"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "Team", "type": "nominal", "title": "Team"},
+                    {"field": "Runs", "type": "quantitative", "title": "Runs Scored"}
+                ]
+            }
+        }
+    ],
+    "config": {
+        "view": {"stroke": null}
+    }
+}
