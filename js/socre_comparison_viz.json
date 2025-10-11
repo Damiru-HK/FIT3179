@@ -51,15 +51,27 @@
                 "x2": {
                     "aggregate": "max",
                     "field": "Score"
+                },
+
+                "opacity": {
+                  "condition": {"param": "venue_selection", "value": 0.9},
+                  "value": 0.2
                 }
             }
         },
 
         {
+            "params": [
+              {
+                "name": "venue_selection",
+                "select": {"type": "point", "fields": ["Venue Stadium"]},
+                "bind": "legend"
+              }
+            ],
+            
             "mark": {
                 "type": "point",
                 "size": 200,
-                "opacity": 0.9,
                 "stroke": "white",
                 "strokeWidth": 1.5,
                 "filled": true
@@ -83,6 +95,11 @@
                     "type": "nominal",
                     "scale": {"domain": ["Average First Innings", "Average Second Innings"],
                               "range": ["triangle", "circle"]}
+                },
+
+                "opacity": {
+                  "condition": {"param": "venue_selection", "value": 0.9},
+                  "value": 0.2
                 },
 
                 "tooltip": [

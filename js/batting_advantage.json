@@ -34,16 +34,13 @@
         "x": {
             "field": "Advantage",
             "type": "quantitative",
-            "title": "Batting Advantage (Runs)"
+            "title": "Bat First Advantage (Runs)"
         },
 
         "color": {
-            "field": "Advantage Type",
+            "field": "Venue Stadium",
             "type": "nominal",
-            "scale": {
-                "domain": ["Bat First Advantage", "Bat Second Advantage"],
-                "range": ["#2ca02c", "#d62728"]
-            },
+            "scale": {"scheme": "tableau10"},
             "title": null,
             "legend": {"title": "Recommended Batting Decision"}
         }
@@ -51,7 +48,21 @@
 
     "layer": [
         {
-            "mark": {"type": "bar", "size": 15}
+            "params": [
+              {
+                "name": "venue_selection",
+                "select": {"type": "point", "fields": ["Venue Stadium"]},
+                "bind": "legend"
+              }
+            ],
+            
+            "mark": {"type": "bar", "size": 15},
+            "encoding": {
+                "opacity": {
+                  "condition": {"param": "venue_selection", "value": 0.9},
+                  "value": 0.2
+                }
+            }
         },
 
         {

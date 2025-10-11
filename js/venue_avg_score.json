@@ -6,6 +6,20 @@
         "text": "2024 T20 World Cup: Average first inning score by venue",
         "fontSize": 18
     },
+
+    "params": [
+        {
+            "name": "innings_select",
+            "value": "Average First Innings",
+            "bind": {
+                "input": "select",
+                "options": ["Average First Innings", "Average Second Innings"],
+                "labels": ["First Innings", "Second Innings"],
+                "name": "Select Innings"
+            }
+        }
+    ],
+
     "projection": {
         "type": "naturalEarth1",
         "center": [-80, 25],
@@ -35,12 +49,26 @@
                 "format": {"type": "csv"}
             },
 
+            "transform": [
+                {
+                    "calculate": "innings_select == 'Average First Innings' ? datum['Average First Innings'] : datum['Average Second Innings']",
+                    "as": "Selected_Score"
+                }
+            ],
+
+            "params": [
+              {
+                "name": "venue_selection",
+                "select": {"type": "point", "fields": ["Venue Stadium"]},
+                "bind": "legend"
+              }
+            ],
+
             "mark": {
                 "type": "circle",
                 "tooltip": true,
                 "stroke": "white",
-                "strokeWidth": 3,
-                "opacity": 0.9
+                "strokeWidth": 3
             },
 
             "encoding": {
@@ -48,10 +76,10 @@
                 "latitude": {"field": "Latitiude ", "type": "quantitative"},
 
                 "size": {
-                    "field": "Average First Innings",
+                    "field": "Selected_Score",
                     "type": "quantitative",
                     "scale": {"range": [300, 2500]},
-                    "legend": {"title": "Average First Innings Score"}
+                    "legend": {"title": "Average Score"}
                 },
 
                 "color": {
@@ -59,6 +87,11 @@
                     "type": "nominal",
                     "scale": {"scheme": "tableau10"},
                     "legend": {"title": "Venue Stadium"}
+                },
+
+                "opacity": {
+                  "condition": {"param": "venue_selection", "value": 0.9},
+                  "value": 0.2
                 },
 
                 "tooltip": [
