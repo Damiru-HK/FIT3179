@@ -52,7 +52,7 @@
                     "legend": null,
                     "scale": {
                         "domain": ["Afghanistan ", "South Africa", "England", "India"],
-                        "range": ["#1f77b4", "#2ca02c", "#d62728", "#ff7f0e"]
+                        "range": ["#550C8A", "#2ca02c", "#d62728", "#ff7f0e"]
                     }
                 },
                 "tooltip": [
@@ -103,7 +103,7 @@
                     "legend": null,
                     "scale": {
                         "domain": ["Afghanistan ", "South Africa", "England", "India"],
-                        "range": ["#1f77b4", "#2ca02c", "#d62728", "#ff7f0e"]
+                        "range": ["#550C8A", "#2ca02c", "#d62728", "#ff7f0e"]
                     }
                 },
                 "tooltip": [
@@ -154,7 +154,7 @@
                     "legend": null,
                     "scale": {
                         "domain": ["Afghanistan ", "South Africa", "England", "India"],
-                        "range": ["#1f77b4", "#2ca02c", "#d62728", "#ff7f0e"]
+                        "range": ["#550C8A", "#2ca02c", "#d62728", "#ff7f0e"]
                     }
                 },
                 "tooltip": [
